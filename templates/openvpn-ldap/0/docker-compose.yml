@@ -36,7 +36,7 @@ services:
     network_mode: ${DOCKER_NETWORK}
     volumes:
     - /dev/net:/dev/net
-    - /proc/sys/net:/proc/sys/net \
+    - /proc/sys/net:/proc/sys/net
     {{- if .Values.DOCKER_CAP_ADD }}
     cap_add:
     - ${DOCKER_CAP_ADD}
