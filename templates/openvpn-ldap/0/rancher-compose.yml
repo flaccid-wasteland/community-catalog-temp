@@ -137,7 +137,7 @@
       type: "string"
 
     - variable: "DOCKER_NETWORK"
-      description: "Optional: The Docker network use ('host' is needed for routes beyond)"
+      description: "Optional: The Docker network to use ('host' is needed for routes beyond)"
       label: "Docker Network"
       type: "string"
       default: "bridge"
@@ -151,7 +151,7 @@
       type: "string"
 
     - variable: "DOCKER_CAP_ADD"
-      description: "Optional: Additional Docker capabilities to add to the OpenVPN container"
+      description: "Optional: Additional Docker capabilities to add to the OpenVPN container, e.g. NET_ADMIN"
       label: "Docker Additinal Capabilities"
       type: "string"
 

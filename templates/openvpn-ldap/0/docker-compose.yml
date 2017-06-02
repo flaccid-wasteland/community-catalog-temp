@@ -31,6 +31,14 @@ openvpn-ldap-server:
   labels:
     io.rancher.sidekicks: openvpn-ldap-data
     io.rancher.container.pull_image: always
+  network_mode: ${DOCKER_NETWORK}
+  volumes:
+  - /dev/net:/dev/net
+  - /proc/sys/net:/proc/sys/net \
+  {{- if .Values.DOCKER_CAP_ADD }}
+  cap_add:
+  - ${DOCKER_CAP_ADD}
+  {{- end }}
   image: mdns/rancher-openvpn:1.0
   privileged: true
   volumes_from:
