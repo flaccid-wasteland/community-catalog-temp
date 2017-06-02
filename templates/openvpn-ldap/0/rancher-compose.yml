@@ -136,6 +136,25 @@
       default: ""
       type: "string"
 
+    - variable: "DOCKER_NETWORK"
+      description: "Optional: The Docker network use ('host' is needed for routes beyond)"
+      label: "Docker Network"
+      type: "string"
+      default: "bridge"
+      options:
+       - "bridge"
+       - "host"
+
+    - variable: "DOCKER_VOLUMES"
+      description: "Optional: Additional volume mappings to run with the OpenVPN container, e.g. /dev/net:/dev/net,/proc/sys/net:/proc/sys/net"
+      label: "Docker Volumes"
+      type: "string"
+
+    - variable: "DOCKER_CAP_ADD"
+      description: "Optional: Additional Docker capabilities to add to the OpenVPN container"
+      label: "Docker Additinal Capabilities"
+      type: "string"
+
 openvpn-ldap-data:
   scale: 1
 openvpn-ldap-server:
