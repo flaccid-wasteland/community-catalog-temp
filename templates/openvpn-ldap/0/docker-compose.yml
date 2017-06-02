@@ -1,3 +1,4 @@
+version: '2'
 openvpn-ldap-data:
   labels:
     io.rancher.container.start_once: 'true'
@@ -40,6 +41,8 @@ openvpn-ldap-server:
   - ${DOCKER_CAP_ADD}
   {{- end }}
   image: mdns/rancher-openvpn:1.0
+  {{- if .Values.DOCKER_PRIVILEGED }}
   privileged: true
+  {{- end }}
   volumes_from:
   - openvpn-ldap-data
